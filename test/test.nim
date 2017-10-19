@@ -34,7 +34,7 @@ proc toJson(n: CborNode): JsonNode =
       newJFloat n.float
 
 suite "Test vectors":
-  const vectors = readFile "tests/appendix_a.json"
+  const vectors = readFile "test/appendix_a.json"
   let js = parseJson vectors
 
   for v in js.items:
@@ -53,11 +53,10 @@ suite "Test vectors":
       let control = v["diagnostic"].getStr
       test control:
         check($c == control)
-    #[
-    if v["roundtrip"].getBval:
+
+    if v["roundtrip"].getBool:
       let testStream = newStringStream()
       c.toStream testStream
       testStream.setPosition 0
       let b64 = base64.encode(testStream.readAll)
       check(b64 == v["cbor"].getStr)
-    ]#
