@@ -12,7 +12,7 @@ proc toJson(n: CborNode): JsonNode =
       newJString n.text
     of cborArray:
       let a = newJArray()
-      for e in n.list.items:
+      for e in n.seq.items:
         a.add(e.toJson)
       a
     of cborMap:
