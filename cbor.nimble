@@ -1,15 +1,11 @@
 # Package
 
-version       = "0.3.1"
+version       = "0.4.0"
 author        = "Emery Hemingway"
 description   = "Concise Binary Object Representation decoder and encoder (RFC7049)."
 license       = "MIT"
+srcDir        = "src"
 
 # Dependencies
 
 requires "nim >= 0.17.2"
-
-skipDirs = @["test"]
-
-task test, "Check implementation against published test vectors":
-  exec "nim c  --path:. -r test/test"
