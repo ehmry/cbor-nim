@@ -1,3 +1,2 @@
-nimcache
-test
-cbor.html
+/src/cbor
+/test/test
