@@ -1,0 +1,52 @@
+The recommended method of encoding Nim types to CBOR is to implement the
+``writeCbor`` procedure for streaming a given type. Decoding streams with
+``CborParse`` is recommended where practical. The ``cbor/bignum`` module
+may serve as a working example of both for a custom type.
+
+The ``CborNode`` type can be used to parse data of unknown schema. The ``%``
+operator will marshall primitive types to ``CborNode``, which can be encoded
+to stream or string. An CBOR stream can be parsed at once into a ``CborNode``
+object. Note that a type for which ``writeCbor`` has been implemented can be
+converted to the ``CborNode`` type using ``initCborOther``, though it is
+intended only as a diagnostic aid.
+
+Examples
+--------
+
+Encoding:
+
+.. code-block:: nim
+  import cbor, streams
+
+  type Foobar = tuple[foo: int, bar: string]
+
+  proc writeCbor(s: Stream; x: Foobar) =
+    s.writeCborArrayLen(2)
+    s.writeCbor(x.foo)
+    s.writeCbor(x.bar)
+
+Decoding:
+
+.. code-block:: nim
+  import cbor, streams
+
+  proc whatIsIt(parser: var CborParser) =
+    case parser.kind
+    of CborEventKind.cborEof:
+      raise newException(EofError, "stream ended early")
+    of CborEventKind.cborText:
+      echo "found some text: ", parser.nextText()
+    of CborEventKind.cborFloat:
+      echo "float: ", parser.nextFloat()
+    of CborEventKind.cborArray:
+      let n = parser.arrayLen
+      parser.next()
+      for _ in 1..n:
+        parser.whatIsIt()
+    else:
+      echo "other: ", parser.nextNode()
+
+  var parser: CborParser
+  open(parser, newFileStream(stdin))
+  parser.next()
+  parser.whatIsIt()
