@@ -3,7 +3,7 @@
 version       = "0.6.0"
 author        = "Emery Hemingway"
 description   = "Concise Binary Object Representation decoder and encoder (RFC7049)."
-license       = "MIT"
+license       = "ISC"
 srcDir        = "src"
 installExt    = @["nim"]
 bin           = @["bin/cbordiag"]
