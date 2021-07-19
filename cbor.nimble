@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.6.0"
+version       = "0.7.0"
 author        = "Emery Hemingway"
 description   = "Concise Binary Object Representation decoder and encoder (RFC7049)."
 license       = "ISC"
