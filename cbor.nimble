@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.7.0"
+version       = "0.8.1"
 author        = "Emery Hemingway"
 description   = "Concise Binary Object Representation decoder and encoder (RFC7049)."
 license       = "ISC"
@@ -12,4 +12,4 @@ skipDirs      = @["bin"]
 
 # Dependencies
 
-requires "nim >= 0.20.0", "bignum"
+requires "nim >= 0.20.0", "bigints"
