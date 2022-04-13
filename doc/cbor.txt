@@ -1,5 +1,5 @@
 The recommended method of encoding Nim types to CBOR is to implement the
-``writeCbor`` procedure for streaming a given type. Decoding streams with
+``writeCborHook`` procedure for streaming a given type. Decoding streams with
 ``CborParse`` is recommended where practical. The ``cbor/bignum`` module
 may serve as a working example of both for a custom type.
 
