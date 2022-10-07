@@ -57,7 +57,7 @@ suite "hooks":
       node = parseCbor(bin)
     check(node.getInt == t.toUnix)
 test "tag":
-  var c = cbor.`%`("foo")
+  var c = toCbor("foo")
   c.tag = 99
   echo c
   check c.tag == 99'u64
