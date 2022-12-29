@@ -3,7 +3,7 @@
 version = "20221007"
 author        = "Emery Hemingway"
 description   = "Concise Binary Object Representation decoder and encoder (RFC7049)."
-license       = "ISC"
+license       = "Unlicense"
 srcDir        = "src"
 installExt    = @["nim"]
 bin           = @["bin/cbordiag"]
