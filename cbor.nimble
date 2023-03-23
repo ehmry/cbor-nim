@@ -1,6 +1,6 @@
 # Package
 
-version = "20230310"
+version = "20230323"
 author        = "Emery Hemingway"
 description   = "Concise Binary Object Representation decoder and encoder (RFC8949)."
 license       = "Unlicense"
