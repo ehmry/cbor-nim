@@ -1,0 +1,2 @@
+include_rules
+: cbor.nim |> !nim_check |>

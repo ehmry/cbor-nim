@@ -1,0 +1,2 @@
+include_rules
+: cbordiag.nim |> !nim_bin |>
