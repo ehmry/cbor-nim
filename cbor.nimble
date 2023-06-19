@@ -12,4 +12,4 @@ skipDirs      = @["bin"]
 
 # Dependencies
 
-requires "nim >= 0.20.0", "bigints"
+requires "nim >= 0.20.0"

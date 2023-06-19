@@ -1,0 +1,2 @@
+include_rules
+: foreach t*.nim |> !nim_run |>
