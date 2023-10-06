@@ -1,2 +1,4 @@
 include_rules
+: |> !nim_lk |> | ./<lock>
+: lock.json |> !nim_cfg |> | ./<lock>
 : foreach src/*.nim |> !nim_check |>
