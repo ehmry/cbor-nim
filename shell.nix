@@ -1,1 +1,6 @@
-let pkgs = import <nixpkgs> { }; in pkgs.nim2Packages.cbor
+{ pkgs ? import <nixpkgs> { } }:
+
+pkgs.buildNimPackage {
+  name = "dummy";
+  lockFile = ./lock.json;
+}

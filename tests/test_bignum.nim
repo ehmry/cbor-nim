@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 
 import
-  bigints, cbor, cbor / bignum
+  pkg / bigints, cbor, cbor / bignum
 
 import
   std / [streams, strutils, unittest]
