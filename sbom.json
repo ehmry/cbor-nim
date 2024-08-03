@@ -1,0 +1,107 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "metadata": {
+    "component": {
+      "type": "application",
+      "bom-ref": "pkg:nim/cbor",
+      "name": "cbor",
+      "description": "Concise Binary Object Representation decoder and encoder (RFC8949).",
+      "version": "20240803",
+      "authors": [
+        {
+          "name": "Emery Hemingway"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Unlicense"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "nim:skipDirs",
+          "value": "bin"
+        },
+        {
+          "name": "nim:installExt",
+          "value": "nim"
+        },
+        {
+          "name": "nim:bin:bin/cbordiag",
+          "value": "bin/cbordiag"
+        },
+        {
+          "name": "nim:srcDir",
+          "value": "src"
+        },
+        {
+          "name": "nim:backend",
+          "value": "c"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:nim/bigints",
+      "name": "bigints",
+      "version": "20231006",
+      "externalReferences": [
+        {
+          "url": "https://github.com/ehmry/nim-bigints/archive/86ea14d31eea9275e1408ca34e6bfe9c99989a96.tar.gz",
+          "type": "source-distribution"
+        },
+        {
+          "url": "https://github.com/ehmry/nim-bigints.git",
+          "type": "vcs"
+        }
+      ],
+      "properties": [
+        {
+          "name": "nix:fod:method",
+          "value": "fetchzip"
+        },
+        {
+          "name": "nix:fod:path",
+          "value": "/nix/store/jvrm392g8adfsgf36prgwkbyd7vh5jsw-source"
+        },
+        {
+          "name": "nix:fod:rev",
+          "value": "86ea14d31eea9275e1408ca34e6bfe9c99989a96"
+        },
+        {
+          "name": "nix:fod:sha256",
+          "value": "15pcpmnk1bnw3k8769rjzcpg00nahyrypwbxs88jnwr4aczp99j4"
+        },
+        {
+          "name": "nix:fod:url",
+          "value": "https://github.com/ehmry/nim-bigints/archive/86ea14d31eea9275e1408ca34e6bfe9c99989a96.tar.gz"
+        },
+        {
+          "name": "nix:fod:ref",
+          "value": "20231006"
+        },
+        {
+          "name": "nix:fod:srcDir",
+          "value": "src"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:nim/cbor",
+      "dependsOn": [
+        "pkg:nim/bigints"
+      ]
+    },
+    {
+      "ref": "pkg:nim/bigints",
+      "dependsOn": []
+    }
+  ]
+}

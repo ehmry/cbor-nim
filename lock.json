@@ -1,1 +1,0 @@
-{"depends":[{"method":"fetchzip","packages":["bigints"],"path":"/nix/store/jvrm392g8adfsgf36prgwkbyd7vh5jsw-source","ref":"20231006","rev":"86ea14d31eea9275e1408ca34e6bfe9c99989a96","sha256":"15pcpmnk1bnw3k8769rjzcpg00nahyrypwbxs88jnwr4aczp99j4","srcDir":"src","url":"https://github.com/ehmry/nim-bigints/archive/86ea14d31eea9275e1408ca34e6bfe9c99989a96.tar.gz"}]}

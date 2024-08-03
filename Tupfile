@@ -1,3 +1,2 @@
 include_rules
-: lock.json |> !nim_cfg |> | ./<lock>
-: foreach src/*.nim |> !nim_check |>
+: sbom.json |> !sbom-to-nix |> | ./<lock>
