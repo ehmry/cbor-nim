@@ -7,7 +7,7 @@
       "bom-ref": "pkg:nim/cbor",
       "name": "cbor",
       "description": "Concise Binary Object Representation decoder and encoder (RFC8949).",
-      "version": "20240803",
+      "version": "20240823",
       "authors": [
         {
           "name": "Emery Hemingway"
